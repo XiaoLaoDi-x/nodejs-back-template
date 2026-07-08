@@ -2,6 +2,6 @@ function fileSave(files) {
   return files;
 }
 
-module.exports = {
+export {
   fileSave
 };

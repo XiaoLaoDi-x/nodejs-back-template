@@ -1,6 +1,6 @@
 const { QUERY_TYPE } = $CONSTANT;
 
-module.exports = {
+export {
   name: 'user',
   mainKey: 'id',
   isLogicDelete: true,

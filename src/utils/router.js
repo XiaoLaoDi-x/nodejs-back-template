@@ -141,4 +141,4 @@ class RouterMoudel extends Router {
   }
 }
 
-module.exports = Router;
+export default Router;

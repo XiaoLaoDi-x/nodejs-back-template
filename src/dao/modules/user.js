@@ -1,6 +1,6 @@
-const db = require('../db');
-const DBPlus = require('../DBPlus');
-const table = require('../table/user');
+import db from '../db';
+import DBPlus from '../DBPlus';
+import table from '../table/user';
 
 class User extends DBPlus {
   constructor() {
@@ -8,4 +8,4 @@ class User extends DBPlus {
   }
 }
 
-module.exports = User;
+export default User;

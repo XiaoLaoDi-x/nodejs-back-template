@@ -1,5 +1,7 @@
-const path = require('path');
-const fs = require('fs');
+import path from 'path';
+import fs from 'fs';
+import { createRequire } from 'node:module';
+const nodeRequire = createRequire(import.meta.url);
 
 /**
  * 遍历文件夹
@@ -43,6 +45,23 @@ const importAll = (context) => {
   });
   return map;
 };
+
+/**
+ * 使用原生 fs 读取目录下所有 .js 文件并返回嵌套 map，替代 webpack 的 require.context
+ * @param {string} dirPath 要扫描的目录绝对路径
+ * @returns {object} 嵌套的模块 map
+ */
+function requireAll(dirPath) {
+  const map = {};
+  readDirSync(dirPath, (name, dir) => {
+    const fullPath = path.join(dir, name);
+    if (name === 'index.js' && dir === dirPath.replace(/\\/g, '/') + '/') return;
+    const keyFile = path.relative(dirPath, fullPath).replace(/\.js$/g, '').replace(/\\/g, '/');
+    const fileArr = keyFile.split('/');
+    recursionAdd(map, fileArr, nodeRequire(fullPath));
+  });
+  return map;
+}
 
 /**
  * 遍历查找路径的存在性，不存在则创建
@@ -128,8 +147,9 @@ function deleteFiles(paths) {
   });
 }
 
-module.exports = {
+export {
   readDirSync,
+  requireAll,
   importAll,
   mkdirPath,
   saveAxiosFile,

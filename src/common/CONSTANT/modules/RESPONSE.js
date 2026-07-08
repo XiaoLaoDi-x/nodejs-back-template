@@ -1,4 +1,4 @@
-module.exports = {
+export {
   // 成功
   SUCCESS_CODE: 200,
   // 错误

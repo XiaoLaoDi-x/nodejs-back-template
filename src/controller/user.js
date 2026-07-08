@@ -1,5 +1,5 @@
-const user = require('../service/user');
-const { tokenAuth, refreshTokenAuth } = require('@/utils/auth');
+import user from '../service/user';
+import { tokenAuth, refreshTokenAuth  } from '@/utils/auth';
 
 module.exports = (router) => {
   const userRouter = router.addMoudel('/user');

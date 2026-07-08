@@ -1,5 +1,5 @@
-const { createClient } = require('redis');
-const Lock = require('./lock');
+import { createClient  } from 'redis';
+import Lock from './lock';
 
 class Redis {
   constructor(option) {
@@ -45,4 +45,4 @@ class Redis {
   }
 }
 
-module.exports = new Redis($config.redis);
+export default new Redis($config.redis);

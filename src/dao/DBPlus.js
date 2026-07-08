@@ -1,5 +1,5 @@
-const _ = require('lodash');
-const sqlCreate = require('@/utils/sql');
+import _ from 'lodash';
+import sqlCreate from '@/utils/sql';
 const dbPlusConfig = $config.dbPlusConfig || {};
 
 class DBPlus {
@@ -66,4 +66,4 @@ class DBPlus {
   }
 }
 
-module.exports = DBPlus;
+export default DBPlus;

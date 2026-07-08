@@ -1,7 +1,7 @@
-const ws = require('ws');
-const WsResponse = require('./WsResponse');
-const distribute = require('./distribute');
-const { authVerify, getTokenHeader } = require('@/utils/auth');
+import ws from 'ws';
+import WsResponse from './WsResponse';
+import distribute from './distribute';
+import { authVerify, getTokenHeader  } from '@/utils/auth';
 
 class WebSocket {
   constructor(server, deviceTypeMaxMap) {
@@ -159,4 +159,4 @@ class WebSocket {
   }
 }
 
-module.exports = WebSocket;
+export default WebSocket;

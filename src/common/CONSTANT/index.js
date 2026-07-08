@@ -1,6 +1,7 @@
-const { importAll } = require('@/utils/file');
+import { fileURLToPath } from 'node:url';
+import path from 'path';
+import { requireAll  } from '@/utils/file';
 
-const files = require.context('./modules/', true, /\.js$/);
-const configInterface = importAll(files);
+const configInterface = requireAll(path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'modules'));
 
-module.exports = configInterface;
+export default configInterface;

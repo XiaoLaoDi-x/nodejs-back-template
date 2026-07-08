@@ -1,5 +1,5 @@
-const User = require('@/dao/modules/user');
-const { setRedis } = require('@/utils/auth');
+import User from '@/dao/modules/user';
+import { setRedis  } from '@/utils/auth';
 
 const user = new User();
 
@@ -36,7 +36,7 @@ async function logout(deviceType, tokenInfo) {
   return '';
 }
 
-module.exports = {
+export {
   login,
   getUserInfo,
   logout

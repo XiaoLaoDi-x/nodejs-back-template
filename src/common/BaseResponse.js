@@ -1,5 +1,5 @@
-const url = require('url');
-const { tokenAuth, refreshTokenAuth } = require('@/utils/auth');
+import url from 'url';
+import { tokenAuth, refreshTokenAuth  } from '@/utils/auth';
 const { RESPONSE } = $CONSTANT;
 const { AllowOrigin, AllowHeaders, AllowMethods } = $config;
 
@@ -86,4 +86,4 @@ class BaseResponse {
   }
 }
 
-module.exports = BaseResponse;
+export default BaseResponse;

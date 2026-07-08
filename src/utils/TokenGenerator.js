@@ -1,4 +1,4 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 
 class TokenGenerator {
   constructor(options = {}) {
@@ -46,4 +46,4 @@ class TokenGenerator {
   }
 }
 
-module.exports = TokenGenerator;
+export default TokenGenerator;

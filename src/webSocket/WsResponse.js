@@ -50,4 +50,4 @@ class WsResponse {
   }
 }
 
-module.exports = new WsResponse();
+export default new WsResponse();

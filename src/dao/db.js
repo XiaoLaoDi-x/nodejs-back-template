@@ -1,5 +1,5 @@
-const mysql = require('mysql');
-const Lock = require('../utils/lock');
+import mysql from 'mysql';
+import Lock from '../utils/lock';
 
 class DB {
   constructor(conf) {
@@ -59,4 +59,4 @@ class DB {
   }
 }
 
-module.exports = new DB($config.mysql);
+export default new DB($config.mysql);

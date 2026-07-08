@@ -1,7 +1,9 @@
-const Router = require('@/utils/router');
-const { importAll } = require('@/utils/file');
-const files = require.context('./modules/', true, /\.js$/);
-const fileMap = importAll(files);
+import { fileURLToPath } from 'node:url';
+import path from 'path';
+import Router from '@/utils/router';
+import { requireAll  } from '@/utils/file';
+const fileMap = requireAll(path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'modules'));
+
 
 // 路由注册
 const router = new Router();
@@ -23,4 +25,4 @@ function distribute(path) {
   return [fn, params];
 }
 
-module.exports = distribute;
+export default distribute;

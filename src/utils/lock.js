@@ -21,4 +21,4 @@ class Lock {
   }
 }
 
-module.exports = Lock;
+export default Lock;

@@ -1,41 +1,42 @@
 {
-  "name": "nodejs-back-template",
-  "version": "2.0.3",
-  "description": "nodejs后台模板",
-  "main": "./dist/main.js",
-  "scripts": {
-    "watch": "webpack --watch --devtool source-map --mode development",
-    "serve": "node ./dist/main.js",
-    "build": "webpack --mode production",
-    "lint": "eslint --fix --ext .js src"
-  },
-  "dependencies": {
-    "jsonwebtoken": "^9.0.2",
-    "lodash": "^4.17.21",
-    "log4js": "^6.9.1",
-    "multiparty": "^4.2.3",
-    "mysql": "^2.18.1",
-    "redis": "^4.6.10",
-    "ws": "^8.14.2"
-  },
-  "devDependencies": {
-    "clean-webpack-plugin": "^4.0.0",
-    "eslint": "^8.35.0",
-    "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ForeverWyq/nodejs-back-template"
-  },
-  "keywords": [
-    "nodejs",
-    "back",
-    "webpack",
-    "websocket",
-    "template",
-    "router"
-  ],
-  "author": "梓齐",
-  "license": "MIT"
+    "name":  "nodejs-back-template",
+    "version":  "2.0.3",
+    "description":  "nodejs后台模板",
+    "main":  "./dist/main.js",
+    "scripts":  {
+                    "watch":  "vite build --watch",
+                    "serve":  "node ./dist/main.js",
+                    "build":  "vite build",
+                    "lint":  "eslint --fix --ext .js src",
+                    "dev":  "vite build --watch"
+                },
+    "dependencies":  {
+                         "jsonwebtoken":  "^9.0.2",
+                         "lodash":  "^4.17.21",
+                         "log4js":  "^6.9.1",
+                         "multiparty":  "^4.2.3",
+                         "mysql":  "^2.18.1",
+                         "redis":  "^4.6.10",
+                         "ws":  "^8.14.2"
+                     },
+    "devDependencies":  {
+                            "vite":  "^5.0.0",
+                            "@rollup/plugin-commonjs":  "^26.0.0",
+                            "eslint":  "^8.35.0"
+                        },
+    "repository":  {
+                       "type":  "git",
+                       "url":  "https://github.com/ForeverWyq/nodejs-back-template"
+                   },
+    "keywords":  [
+                     "nodejs",
+                     "back",
+                     "vite",
+                     "websocket",
+                     "template",
+                     "router"
+                 ],
+    "author":  "梓齐",
+    "license":  "MIT",
+    "type":  "module"
 }

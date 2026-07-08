@@ -1,4 +1,4 @@
-const TokenGenerator = require('./TokenGenerator');
+import TokenGenerator from './TokenGenerator';
 const { tokenConf, refreshTokenConf, deviceType } = $config;
 
 class Auth {
@@ -118,7 +118,7 @@ function getTokenHeader(tokenInfo) {
   };
 }
 
-module.exports = {
+export {
   tokenAuth,
   refreshTokenAuth,
   setRedis,

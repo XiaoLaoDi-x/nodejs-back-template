@@ -1,4 +1,4 @@
-const file = require('../service/file');
+import file from '../service/file';
 
 module.exports = (router) => {
   const fileRouter = router.addMoudel('/file');

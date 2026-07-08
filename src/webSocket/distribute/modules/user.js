@@ -1,4 +1,4 @@
-const user = require('@/service/user');
+import user from '@/service/user';
 
 const fileRoot = '/user';
 

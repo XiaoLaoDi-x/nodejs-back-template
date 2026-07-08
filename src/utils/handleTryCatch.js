@@ -12,4 +12,4 @@ async function handleTryCatch(fn, ...args) {
   }
 }
 
-module.exports = handleTryCatch;
+export default handleTryCatch;

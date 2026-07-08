@@ -1,4 +1,4 @@
-const log4js = require('log4js');
+import log4js from 'log4js';
 const { warn, error } = $config.log;
 
 const maxLogSize = Math.pow(1024, 2) * 5;
@@ -46,4 +46,4 @@ class Log {
   }
 }
 
-module.exports = new Log();
+export default new Log();

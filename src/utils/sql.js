@@ -1,4 +1,4 @@
-const _ = require('lodash');
+import _ from 'lodash';
 const { QUERY_TYPE } = $CONSTANT;
 
 /**
@@ -225,7 +225,7 @@ function logicRemoveByIds(ids, table, tableMainKey, logicField) {
   };
 }
 
-module.exports = {
+export {
   select,
   selectCount,
   insert,

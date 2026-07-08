@@ -1,4 +1,7 @@
-const globalConfig = require(`./config.js`);
-const config = require(`./config.${process.env.NODE_ENV}.js`);
+import { createRequire } from 'node:module';
+const nodeRequire = createRequire(import.meta.url);
 
-module.exports = { ...globalConfig, ...config };
+const globalConfig = nodeRequire('./config.js');
+const config = nodeRequire('./config.' + process.env.NODE_ENV + '.js');
+
+export default { ...globalConfig, ...config };

@@ -1,4 +1,4 @@
-module.exports = {
+export {
   serverPort: 10086,
   log: {
     warn: ['warnLogs'],

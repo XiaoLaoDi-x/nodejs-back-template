@@ -5,7 +5,7 @@ const refreshTokenKey = 'refresh_token';
 // 登录设备类型
 const deviceType = 'device_type';
 
-module.exports = {
+export {
   // 服务前缀路径
   serverBaseUrl: '/serve',
   // 文件保存路径

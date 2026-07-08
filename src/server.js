@@ -1,15 +1,17 @@
-const http = require('http');
-const url = require('url');
-const querystring = require('querystring');
-const multiparty = require('multiparty');
+import { fileURLToPath } from 'node:url';
+import http from 'http';
+import path from 'path';
+import url from 'url';
+import querystring from 'querystring';
+import multiparty from 'multiparty';
 
-const BaseResponse = require('@/common/BaseResponse');
-const WebSocket = require('@/webSocket/index');
+import BaseResponse from '@/common/BaseResponse';
+import WebSocket from '@/webSocket/index';
 
-const handleTryCatch = require('@/utils/handleTryCatch');
-const Router = require('@/utils/router');
-const { importAll, mkdirPath } = require('@/utils/file');
-const { authVerify, getTokenHeader } = require('./utils/auth');
+import handleTryCatch from '@/utils/handleTryCatch';
+import Router from '@/utils/router';
+import { requireAll, mkdirPath  } from '@/utils/file';
+import { authVerify, getTokenHeader  } from './utils/auth';
 
 class HttpServer {
   constructor(options) {
@@ -33,9 +35,7 @@ class HttpServer {
     });
   }
   registeredRoute(baseUrl) {
-    // 路由注册
-    const controllerFiles = require.context('./controller/', true, /\.js$/);
-    const fileMap = importAll(controllerFiles);
+    const fileMap = requireAll(path.resolve(fileURLToPath(new URL('.', import.meta.url)), 'controller'));
     const router = new Router(baseUrl);
     Object.keys(fileMap).forEach(name => {
       const register = fileMap[name];
@@ -118,4 +118,4 @@ class HttpServer {
   }
 }
 
-module.exports = HttpServer;
+export default HttpServer;

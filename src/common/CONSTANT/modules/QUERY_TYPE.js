@@ -1,4 +1,4 @@
-module.exports = {
+export {
   // 头尾模糊
   includes: 'F',
   // 从尾模糊
